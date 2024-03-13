@@ -12,9 +12,7 @@ async function bootstrap() {
     rawBody: true,
   });
 
-  app.enableCors({
-    origin: [/[^?.]localhost:(?:\d{2,5})$/, /[^?.]\.api.fillout.com$/],
-  });
+  app.enableCors();
 
   await app.listen(3000);
 }
