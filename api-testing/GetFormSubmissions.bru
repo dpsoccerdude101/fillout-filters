@@ -1,0 +1,31 @@
+meta {
+  name: GetFormSubmissions
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://api.fillout.com/v1/api/forms/{{formId}}/submissions?filters={{filters}}
+  body: none
+  auth: bearer
+}
+
+query {
+  filters: {{filters}}
+  ~offset: 0
+  ~limit: 150
+  ~afterDate: 2024-01-01T00:00:00.000Z
+  ~beforeDate: 2024-01-01T00:00:00.000Z
+  ~status: in_progress
+  ~includeEditLink: true
+  ~sort: asc
+}
+
+auth:bearer {
+  token: {{api_key}}
+}
+
+vars:pre-request {
+  formId: cLZojxk94ous
+  filters: JSON.stringify({id:'',condition:'equals'})
+}

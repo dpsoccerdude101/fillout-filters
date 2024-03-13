@@ -1,0 +1,19 @@
+meta {
+  name: GetFormMetadata
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://api.fillout.com/v1/api/forms/{{formId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{api_key}}
+}
+
+vars:pre-request {
+  formId: cLZojxk94ous
+}

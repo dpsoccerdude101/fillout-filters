@@ -1,0 +1,19 @@
+meta {
+  name: GetAllForms
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://api.fillout.com/v1/api/forms
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{api_key}}
+}
+
+vars:post-response {
+  formId: res.body.formId
+}
